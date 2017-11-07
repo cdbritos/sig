@@ -21,7 +21,7 @@ function getRoute() {
   routeGraphicsLayer.removeAll();
   var request = new XMLHttpRequest();
   var requestUrl = "http://route.arcgis.com/arcgis/rest/services/World/Route/NAServer/Route_World/solve?f=json"
-  var token = '7uYgf2IUfZ5Bdkn3wnC0v58t4yRmjs7UabWaeYmv2MrcyfuDjhUERP9nz7yaWpHu6i2eX1VJt_DH__q97jjFY0ypoZ75SmYtkYz_VuYZcccdpNJncKxJx21gIAH2o3BUXQH9qQm6ulJi1dmO0VasiA';
+  var token = 'yv-FAaJFhgseUB8u4q1A2FXEZwg2_CSgWDr-jDAAcOB989SvIhSZzXYWwHZMU2QEySMVTdEAppDQfjOPhDfbC7F4Zy-dz_m1XRKBPWEB0atrDInB6ew4_gOxcgWKhRxN3yxBXoJJAX-_Cy_qljWSxQ..';
   var stops = getStops();
   requestUrl = requestUrl + `&token=${token}&stops=${stops}`;
   request.open('GET', requestUrl, false);  // `false` makes the request synchronous
