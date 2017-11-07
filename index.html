@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+  <title>Sig - Obligatorio 2</title>
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+  <!-- jQuery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+  <!-- JQUERY -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+  <!-- Latest compiled JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+  <link rel="stylesheet" href="https://js.arcgis.com/4.5/esri/css/main.css">
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <script src="https://js.arcgis.com/4.5/"></script>
+  <script type="text/javascript" src="map2.js"></script>
+  <script type="text/javascript" src="search.js"></script>
+  <script type="text/javascript" src="getRoute.js"></script>
+
+  <script>
+    $( function() {
+      $( "#sortable" ).sortable();
+      $( "#sortable" ).disableSelection();
+    });
+  </script>
+
+</head>
+<body>
+  <div class="mapItem" id="viewDiv">
+  </div>
+  <div class="dropdown menuButtonContainer">
+	  <button class="btn menuButton dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+	  	Ver Rutas Anteriores
+	  </button>
+	  <div id="routeMenu" class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+	  </div>
+	</div>
+  <div class="searchContainer">
+    <div class="searchContent">
+      <div class="searchHeader">
+        <div class="searchTitle">
+          Buscar lugares/direcciones
+        </div>
+        <form action="#" onsubmit="search()">
+	  			<input id="searchTxt" type="text" class="form-control textInput" placeholder="Dirección o Nombre">
+					<button type="button" class="btn btn-default btn-sm searchBtn" onClick="search()">
+						<span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+					</button>
+				</form>
+      </div>
+      <div class="searchBody">
+        <ul id="sortable" >
+        </ul>
+        <div class="buttonContainer">
+        	<button type="button" id="routeButton" class="btn routeButton" autocomplete="off" onClick="getRoute()">
+					  Obtener ruta
+					</button>
+        </div>
+      </div>
+    </div>
+  </div>  
+</body>
+</html>
